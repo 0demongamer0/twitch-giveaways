@@ -236,6 +236,32 @@ function Controller(container, config) {
 		self.setter('rolling.forbiddenWords')(list);
 	}
 
+	this.randrange = function (min, max) {
+		var range = max - min;
+		if (range <= 0) {
+			throw new Exception('max must be larger than min');
+		}
+		var requestBytes = Math.ceil(Math.log2(range) / 8);
+		if (!requestBytes) { // No randomness required
+			return min;
+		}
+		var maxNum = Math.pow(256, requestBytes);
+		var ar = new Uint8Array(requestBytes);
+
+		while (true) {
+			window.crypto.getRandomValues(ar);
+
+			var val = 0;
+			for (var i = 0;i < requestBytes;i++) {
+				val = (val << 8) + ar[i];
+			}
+
+			if (val < maxNum - maxNum % range) {
+				return min + (val % range);
+			}
+		}
+	};
+
 	// Rolling function
 	this.roll = function () {
 		// Blur active element to work around this chrome rendering bug:
@@ -274,7 +300,13 @@ function Controller(container, config) {
 		}
 
 		// Pick random winner from pool
-		var winner = pool[Math.random() * pool.length | 0];
+		// Using window.crypto.getRandomValues instead of Math.random
+		// See "this.randrange"
+		// Though V8 has a better Math.Random Algo its not designed for secure number generation and when items of value are on the line
+		// I would feel better using something other than math.random()
+		// Want to be able to pull random numbers from random.org using XMLHttpRequest.
+		// https://www.random.org/integers/?num=1&min=0&col=1&base=10&format=plain&rnd=new&max=200
+		var winner = pool[self.randrange(0, pool.length)];
 		winner.messages = [];
 		winner.rolledAt = new Date();
 
