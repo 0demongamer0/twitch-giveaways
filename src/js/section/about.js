@@ -12,8 +12,6 @@ module.exports = {
 function Controller() {
 	this.version = require('tga/data/changelog.json')[0];
 	this.faqs = require('tga/data/faq.json');
-	// send page view
-	ga('send', 'pageview', '/app/about');
 }
 
 var lineToP = morpher('p', true);

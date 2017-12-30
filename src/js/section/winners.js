@@ -15,8 +15,6 @@ module.exports = {
 
 function Controller() {
 	this.virtualList = virtualList();
-	// send page view
-	ga('send', 'pageview', '/app/winners');
 }
 
 function view(ctrl) {

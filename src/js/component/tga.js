@@ -304,36 +304,6 @@ function Controller(container, config) {
 					title: stream ? stream.status : 'couldn\'t retrieve stream title'
 				});
 			});
-
-		// Gather some analytics
-		if (chat.user.broadcaster || chat.user.moderator) {
-			try {
-				// send 'entered' event
-				ga('send', 'event', {
-					eventCategory: 'entered',
-					eventAction: 'roll',
-					eventLabel: channel.name,
-					eventValue: pool.length,
-					nonInteraction: true
-				});
-			} catch (err) {
-				console.error(err);
-			}
-
-			// send 'viewers' event
-			channel.stream().then(function (stream) {
-				// stream is null when channel is not streaming
-				if (stream) ga('send', 'event', {
-					eventCategory: 'viewers',
-					eventAction: 'roll',
-					eventLabel: stream.channel.name,
-					eventValue: stream.viewers,
-					nonInteraction: true
-				});
-			}, function (err) {
-				console.error(err);
-			});
-		}
 	};
 
 	// components

@@ -20,8 +20,6 @@ function Controller() {
 		this.setter('isNewVersion')(false);
 		this.setter('options.lastReadChangelog')(this.version);
 	}
-	// send page view
-	ga('send', 'pageview', '/app/changelog');
 }
 
 function formatRelease(release, i) {
