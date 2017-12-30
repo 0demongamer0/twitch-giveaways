@@ -104,5 +104,14 @@
 			"Because I believe that a streamer should have complete control of what is displayed on their stream. Baking in ads denies that ability.",
 			"So I added an option to give the choice to the streamer."
 		]
+	},
+	{
+		"question": "What does the \"Use Math.Random\" setting do?",
+		"answer": [
+			"Having this option enabled will use the origial method (Math.Random) to return a floating-point number between 0 and 1 using a PRNG, this value is then multipled by the number of entries.",
+			"Leaving this option disabled will use the newer Web Cryptography API to generate a random number betwen 0 and entries-1 (as the entry list is 0 based) using a CSPRNG.",
+			"As the extension this is forked from is used to select winners of prizes with some significant value, I would feel better having a CSPRNG as an option to select winners.",
+			"It is my intension to include a 3rd party source of randomness (for example random.org) at somepoint."
+		]
 	}
 ]
