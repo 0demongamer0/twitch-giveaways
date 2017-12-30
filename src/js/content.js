@@ -1,6 +1,7 @@
 var channel = getChannelName();
 var button = document.createElement('a');
 var postman;
+var updateButtonTimer;
 button.className = 'tga-button button button--icon-only float-left';
 button.title = 'Open Twitch Giveaways';
 button.target = '_blank';
@@ -22,7 +23,9 @@ if (window.name === 'tga-embedded-chat') {
 	});
 } else if (['www.twitch.tv', 'twitch.tv', 'go.twitch.tv'].indexOf(window.location.hostname) > -1) {
 	// Keep updating TGA button
-	setInterval(function (callback) {
+	// No real need to keep calling this every sec. (also I don't like the button placement.)
+	// So going to change it so once its inserted the timer stops.
+	updateButtonTimer = setInterval(function (callback) {
 		var container = document.querySelector('.chat-buttons-container');
 		if (!container) container = document.querySelector('.chat-input__buttons-container');
 		if (!container) return;
@@ -41,6 +44,7 @@ if (window.name === 'tga-embedded-chat') {
 
 		button.href = chrome.extension.getURL('main.html?channel=' + channel);
 		if (button.parentNode !== container) container.appendChild(button);
+		clearInterval(updateButtonTimer);
 	}, 1000);
 }
 
