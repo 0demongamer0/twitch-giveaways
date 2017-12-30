@@ -176,7 +176,7 @@ function Controller(container, config) {
 			}
 		}
 		if (self.rolling.keyword) {
-			var keywordIndex = self.rolling.caseSensitive
+			var keywordIndex = self.options.caseSensitive
 				? message.text.indexOf(self.rolling.keyword)
 				: message.text.toLowerCase().indexOf(self.rolling.keyword.toLowerCase());
 			if (keywordIndex === 0) {

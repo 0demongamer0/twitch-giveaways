@@ -19,5 +19,6 @@
 		"mikuia",
 		"rifflebot",
 		"revlobot"
-	]
+	],
+	"caseSensitive": false
 }

@@ -268,21 +268,24 @@ tabs.keyword = {
 					'data-tip': 'Cancel keyword <kbd>ESC</kbd>'
 				}, [icon('close')])
 			]),
+
+			// ctrl.rolling.caseSensitive
 			m('.option.case-sensitive', {key: 'case-sensitive', config: animate('slideinleft', 100)}, [
 				m('label', {
-					onmousedown: withKey(1, ctrl.setter('rolling.caseSensitive').to(!ctrl.rolling.caseSensitive))
+					onmousedown: withKey(1, ctrl.setter('options.caseSensitive').to(!ctrl.options.caseSensitive))
 				}, 'Case sensitive'),
-				icon(ctrl.rolling.caseSensitive ? 'check' : 'close', {
-					class: 'checkbox' + (ctrl.rolling.caseSensitive ? ' checked' : ''),
-					onmousedown: withKey(1, ctrl.setter('rolling.caseSensitive').to(!ctrl.rolling.caseSensitive))
+				icon(ctrl.options.caseSensitive ? 'check' : 'close', {
+					class: 'checkbox' + (ctrl.options.caseSensitive ? ' checked' : ''),
+					onmousedown: withKey(1, ctrl.setter('options.caseSensitive').to(!ctrl.options.caseSensitive))
 				}),
 				m('p.description.sameline', [
 					'Casing ',
-					ctrl.rolling.caseSensitive
+					ctrl.options.caseSensitive
 						? m('strong', 'matters!')
 						: m('strong', 'doesn\'t matter!')
 				])
 			]),
+
 			m('.option.keyword-antispam', {
 				key: 'option-keyword-antispam',
 				config: animate('slideinleft', 150)
