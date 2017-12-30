@@ -34,13 +34,9 @@ function view(ctrl) {
 					m('.meta', {config: animate('slideinleft', 50)}, [m('em', ctrl.version.date)])
 				]),
 				m('aside.lower', [
-					m('a.action', {href: 'https://github.com/darsain/twitch-giveaways', target: '_blank', config: animate('slideinright', 150)}, [
+					m('a.action', {href: 'https://github.com/crosseyejack/twitch-giveaways', target: '_blank', config: animate('slideinright', 150)}, [
 						m('span.name', 'Repository'),
 						icon('github')
-					]),
-					m('a.action', {href: 'https://twitter.com/darsain', target: '_blank', config: animate('slideinleft', 150)}, [
-						icon('twitter'),
-						m('span.name', 'Author')
 					])
 				])
 			])
