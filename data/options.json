@@ -7,6 +7,7 @@
 	"keywordAntispamLimit": 1,
 	"displayTooltips": true,
 	"displayAdverts": false,
+	"useMathRandom": false,
 	"forbiddenWords": "",
 	"ignoreList": [
 		"jtv",

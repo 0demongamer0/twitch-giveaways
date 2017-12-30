@@ -306,7 +306,7 @@ function Controller(container, config) {
 		// I would feel better using something other than math.random()
 		// Want to be able to pull random numbers from random.org using XMLHttpRequest.
 		// https://www.random.org/integers/?num=1&min=0&col=1&base=10&format=plain&rnd=new&max=200
-		var winner = pool[self.randrange(0, pool.length)];
+		var winner = (self.options.useMathRandom) ? pool[Math.random() * pool.length | 0] : pool[self.randrange(0, pool.length)] ;
 		winner.messages = [];
 		winner.rolledAt = new Date();
 

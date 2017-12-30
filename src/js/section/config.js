@@ -125,6 +125,19 @@ function view(ctrl) {
 				onmousedown: withKey(1, ctrl.setter('options.displayAdverts').to(!ctrl.options.displayAdverts))
 			}),
 			m('p.description', 'Display the ad\'s the orig dev included. Details in ', m('a[href="#"]', {onmousedown: ctrl.toSection('about')}, 'FAQ'), '.')
+		]),
+
+		// Use Math.Random
+		m('article.option.use-mathrandom', {
+			key: 'option-use-mathrandom',
+			config: animate('slideinleft', 50 * i++)
+		}, [
+			m('label', {onmousedown: withKey(1, ctrl.setter('options.useMathRandom').to(!ctrl.options.useMathRandom))}, 'Use Math.Random'),
+			icon(ctrl.options.useMathRandom ? 'check' : 'close', {
+				class: 'checkbox' + (ctrl.options.useMathRandom ? ' checked' : ''),
+				onmousedown: withKey(1, ctrl.setter('options.useMathRandom').to(!ctrl.options.useMathRandom))
+			}),
+			m('p.description', 'Use Math.Random or crypto.getRandomValues. Details in ', m('a[href="#"]', {onmousedown: ctrl.toSection('about')}, 'FAQ'), '.')
 		])
 	];
 }
