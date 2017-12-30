@@ -45,10 +45,12 @@ function view(ctrl) {
 				])
 			])
 		]),
+		(ctrl.options.displayAdverts) ?
 		m('fieldset.begging', [
 			m('legend', {config: animate('fadein', 100)}, 'Support the development'),
 			require('../component/support').view(ctrl)
-		]),
+		]) : null,
+		(ctrl.options.displayAdverts) ?
 		m('fieldset.sponsorship', [
 			m('legend', {config: animate('fadein', 100)}, 'Sponsor Twitch Giveaways'),
 			m('article', {config: animate('slideinleft', 100)}, [
@@ -59,7 +61,7 @@ function view(ctrl) {
 					])
 				])
 			])
-		]),
+		]) : null,
 		m('fieldset.faq', [
 				m('legend', {config: animate('fadein', 100)}, 'Frequently Asked Questions')
 			].concat(ctrl.faqs.map(function (faq, i) {

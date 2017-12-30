@@ -98,5 +98,12 @@
 			"If you <em>\"feel\"</em> that it isn't random, I urge you to test it! Get 10 people in the list, and roll a couple hundred times while writing down the win distribution.",
 			"If you still don't believe me, you can always open the <a href=\"https://github.com/darsain/twitch-giveaways\" target=\"_blank\">repository</a> and check the code. Rolling is located in the <code>src/js/component/tga.js</code> file as <code>this.roll()</code> function."
 		]
+	},
+	{
+		"question": "Why give an option to display adverts?",
+		"answer": [
+			"Because I believe that a streamer should have complete control of what is displayed on their stream. Baking in ads denies that ability.",
+			"So I added an option to give the choice to the streamer."
+		]
 	}
 ]

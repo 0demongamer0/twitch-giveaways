@@ -112,6 +112,19 @@ function view(ctrl) {
 				onmousedown: withKey(1, ctrl.setter('options.displayTooltips').to(!ctrl.options.displayTooltips))
 			}),
 			m('p.description', 'Hide tooltips if you already know what is what.')
+		]),
+
+		// display adverts
+		m('article.option.display-adverts', {
+			key: 'option-display-adverts',
+			config: animate('slideinleft', 50 * i++)
+		}, [
+			m('label', {onmousedown: withKey(1, ctrl.setter('options.displayAdverts').to(!ctrl.options.displayAdverts))}, 'Display adverts'),
+			icon(ctrl.options.displayAdverts ? 'check' : 'close', {
+				class: 'checkbox' + (ctrl.options.displayAdverts ? ' checked' : ''),
+				onmousedown: withKey(1, ctrl.setter('options.displayAdverts').to(!ctrl.options.displayAdverts))
+			}),
+			m('p.description', 'Display the ad\'s the orig dev included. Details in ', m('a[href="#"]', {onmousedown: ctrl.toSection('about')}, 'FAQ'), '.')
 		])
 	];
 }

@@ -114,13 +114,15 @@ function Controller(user) {
 }
 
 function view(ctrl) {
-	if (ctrl.loading) return [
-		m('fieldset.sponsored-by', [
-			m('legend', 'Twitch Giveaways is sponsored by'),
-			sponsors()
-		]),
-		m('.section-spinner')
-	];
+	if (ctrl.loading)
+		return [
+			m('.section-spinner'),
+			(ctrl.options.displayAdverts) ?
+			m('fieldset.sponsored-by', [
+				m('legend', 'Twitch Giveaways is sponsored by'),
+				sponsors()
+			]) : null
+		];
 	var i = 0;
 	var user = ctrl.user;
 	var following = user.following;
@@ -163,10 +165,11 @@ function view(ctrl) {
 				])
 			])
 		]),
+		(ctrl.options.displayAdverts) ?
 		m('fieldset.sponsored-by', [
 			m('legend', 'Twitch Giveaways is sponsored by'),
 			sponsors()
-		]),
+		]) : null,
 		m('.messages', [
 			m('h2.title', {config: animate('slideinleft', i++ * 50 + 200)}, [
 				m('span.name', {'data-tip': 'Messages since being rolled.'}, [

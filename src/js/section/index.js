@@ -49,10 +49,11 @@ function Controller() {
 function view(ctrl) {
 	var i = 0;
 	return [
+		(ctrl.options.displayAdverts) ?
 		m('fieldset.sponsored-by', [
 			m('legend', 'Twitch Giveaways is sponsored by'),
 			sponsors()
-		]),
+		]) : null,
 		m('.controls', [
 			m('.block.groups', Object.keys(ctrl.rolling.groups).map(groupToToggle, ctrl)),
 			m('ul.block.rolltypes', {config: animate('slideinleft', 50 * i++)}, ctrl.rolling.types.map(typeToTab, ctrl)),
