@@ -4,8 +4,22 @@ Comfortable giveaways system for [Twitch.tv](http://twitch.tv) channels.
 
 ![Screenshot](http://i.imgur.com/tMulUND.png)
 
+## Why the fork?
+
+Simply put, there were a few things I didn't like about the original so I forked it to make the changes I wanted.
+
+## What didn't you like about the original?
+
+I didn't like how the ad's were baked in without any ability to filter or disable them. I believe that streamers should have full control of what is shown on their streams.
+Baking in the ad's removes this ability, So I wanted to add a control to disable them. It is my intension to link the ads back to the orig version at some point.
+
+I also didn't like how the settings I used in this extension reset when I loaded it so I want to fix that issue.
+
+And there are a few other issues I will fix and post about once I get around to fixing them.
+
 ## Installation
 
+TODO Replace link to the forked version once I launch it.
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/twitch-giveaways/poohjpljfecljomfhhimjhddddlidhdd)
 
 ## Technologies used
@@ -33,6 +47,24 @@ Gulp tasks dependencies:
 ```
 npm install
 ```
+
+You will also need a ton of component dependencies that have seemed to stopped working since its deprecation for one reason or another.
+
+// TODO include link to the archive of dependencies
+Download the archive of dependencies and extract the "components" folder into the root of the project.
+
+You will also need to update the pinned dependencies by running.
+
+```
+component update
+```
+
+After which you should be able to build this project.
+
+## If component is deprecated why continue to use it?
+
+Good Question. Basically for me it comes down to if I were to replace component then I would just rewrite the whole thing from the ground up.
+I'll prob do that one day, just not got the free time to do it just yet.
 
 ## Gulp tasks
 
