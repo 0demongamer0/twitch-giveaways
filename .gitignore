@@ -5,3 +5,6 @@ node_modules
 banner
 branding
 tga-*
+# Following ignores are to ignore my components archive and for package-lock.
+package-lock.json
+*.rar
