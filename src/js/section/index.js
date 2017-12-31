@@ -59,7 +59,7 @@ function view(ctrl) {
 			m('ul.block.rolltypes', {config: animate('slideinleft', 50 * i++)}, ctrl.rolling.types.map(typeToTab, ctrl)),
 			m('.block.options', [
 				// roll type specific options block
-				tabs[ctrl.rolling.type].view(ctrl),
+				tabs[ctrl.options.type].view(ctrl),
 
 				// min bits
 				m('.option', {key: 'min-bits', config: animate('slideinleft', 50 * i++)}, [
@@ -193,8 +193,8 @@ function groupToToggle(name, i) {
 
 function typeToTab(name) {
 	return m('li', {
-		class: this.rolling.type === name ? 'active' : '',
-		onclick: this.setter('rolling.type').to(name),
+		class: this.options.type === name ? 'active' : '',
+		onclick: this.setter('options.type').to(name),
 		'data-tip': tabs[name].tip(this)
 	}, ucFirst(name));
 }

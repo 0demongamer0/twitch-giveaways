@@ -117,7 +117,7 @@ function Controller(container, config) {
 
 	// set activeTimeout user cleaning interval
 	setInterval(function () {
-		if (self.rolling.type === 'active') {
+		if (self.options.type === 'active') {
 			self.requestUpdateSelectedUsers();
 		}
 	}, 1000 * 10);
@@ -201,7 +201,7 @@ function Controller(container, config) {
 	this.users.on('remove', self.selectedUsers.remove.bind(self.selectedUsers));
 
 	this.setter.on('rolling.groups', this.updateSelectedUsers);
-	this.setter.on('rolling.type', this.updateSelectedUsers);
+	this.setter.on('options.type', this.updateSelectedUsers);
 	this.setter.on('rolling.activeTimeout', function () {
 		updateActiveCutoffTime();
 		self.requestUpdateSelectedUsers();

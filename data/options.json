@@ -20,5 +20,6 @@
 		"rifflebot",
 		"revlobot"
 	],
-	"caseSensitive": false
+	"caseSensitive": false,
+	"type": "all"
 }
