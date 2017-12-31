@@ -34,7 +34,7 @@ if (window.name === 'tga-embedded-chat') {
 		if (!channel) return;
 
 		// new twitch beta markup fix
-		if (container.children[0].className === 'flex flex-row') {
+		if (container.children[0].className === 'flex flex-row' || container.children[0].className === 'tw-flex tw-flex-row') {
 			container = container.children[0];
 			button.className = 'tw-button-icon';
 			button.style.padding = '0 4px';
