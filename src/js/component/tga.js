@@ -65,13 +65,7 @@ function Controller(container, config) {
 	this.rolling = {
 		types: ['all', 'active', 'keyword'],
 		keyword: null,
-		forbiddenWords: [],
-		groups: {
-			staff: true,
-			admin: true,
-			mod: true,
-			user: true
-		}
+		forbiddenWords: []
 	};
 	this.winner = null;
 	this.messages = new Messages();
@@ -194,7 +188,7 @@ function Controller(container, config) {
 	});
 	this.users.on('remove', self.selectedUsers.remove.bind(self.selectedUsers));
 
-	this.setter.on('rolling.groups', this.updateSelectedUsers);
+	this.setter.on('options.groups', this.updateSelectedUsers);
 	this.setter.on('options.type', this.updateSelectedUsers);
 	this.setter.on('options.activeTimeout', function () {
 		updateActiveCutoffTime();

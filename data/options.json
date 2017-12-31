@@ -25,5 +25,11 @@
 	"minBits": 0,
 	"subscriberLuck": 1,
 	"subscribedTime": 0,
-	"activeTimeout": 1200000
+	"activeTimeout": 1200000,
+	"groups": {
+		"staff": true,
+		"admin": true,
+		"mod": true,
+		"user": true
+	}
 }

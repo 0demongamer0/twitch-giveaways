@@ -55,7 +55,7 @@ function view(ctrl) {
 			sponsors()
 		]) : null,
 		m('.controls', [
-			m('.block.groups', Object.keys(ctrl.rolling.groups).map(groupToToggle, ctrl)),
+			m('.block.groups', Object.keys(ctrl.options.groups).map(groupToToggle, ctrl)),
 			m('ul.block.rolltypes', {config: animate('slideinleft', 50 * i++)}, ctrl.rolling.types.map(typeToTab, ctrl)),
 			m('.block.options', [
 				// roll type specific options block
@@ -182,11 +182,11 @@ function msToTime(ms) {
 
 function groupToToggle(name, i) {
 	return m('.btn', {
-			class: this.rolling.groups[name] ? 'checked' : '',
-			onmousedown: withKey(1, this.setter('rolling.groups.' + name).to(!this.rolling.groups[name])),
+			class: this.options.groups[name] ? 'checked' : '',
+			onmousedown: withKey(1, this.setter('options.groups.' + name).to(!this.options.groups[name])),
 			config: animate('slideinleft', 50 * i)
 		}, [
-			icon(this.rolling.groups[name] ? 'check' : 'close'),
+			icon(this.options.groups[name] ? 'check' : 'close'),
 			ucFirst(name)
 	]);
 }
