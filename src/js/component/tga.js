@@ -63,11 +63,9 @@ function Controller(container, config) {
 	this.selectedUsers = new Users();
 	this.winners = new Winners(channel.name, {onsync: m.redraw});
 	this.rolling = {
-		type: 'all',
 		types: ['all', 'active', 'keyword'],
 		activeTimeout: 20 * 1000 * 60,
 		keyword: null,
-		caseSensitive: true,
 		subscriberLuck: 1,
 		minBits: 0,
 		subscribedTime: 0,

@@ -269,7 +269,6 @@ tabs.keyword = {
 				}, [icon('close')])
 			]),
 
-			// ctrl.rolling.caseSensitive
 			m('.option.case-sensitive', {key: 'case-sensitive', config: animate('slideinleft', 100)}, [
 				m('label', {
 					onmousedown: withKey(1, ctrl.setter('options.caseSensitive').to(!ctrl.options.caseSensitive))
