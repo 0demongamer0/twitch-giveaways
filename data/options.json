@@ -21,5 +21,6 @@
 		"revlobot"
 	],
 	"caseSensitive": false,
-	"type": "all"
+	"type": "all",
+	"minBits": 0
 }

@@ -67,7 +67,6 @@ function Controller(container, config) {
 		activeTimeout: 20 * 1000 * 60,
 		keyword: null,
 		subscriberLuck: 1,
-		minBits: 0,
 		subscribedTime: 0,
 		forbiddenWords: [],
 		groups: {
@@ -205,7 +204,7 @@ function Controller(container, config) {
 		self.requestUpdateSelectedUsers();
 	});
 	this.setter.on('rolling.keyword', self.requestUpdateSelectedUsers);
-	this.setter.on('rolling.minBits', self.requestUpdateSelectedUsers);
+	this.setter.on('options.minBits', self.requestUpdateSelectedUsers);
 	this.setter.on('rolling.subscribedTime', self.requestUpdateSelectedUsers);
 
 	// search

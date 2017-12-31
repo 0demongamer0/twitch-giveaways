@@ -24,7 +24,7 @@ function Controller() {
 		self.updateSelectedUsers();
 	};
 
-	var minBitsSeter = this.setter('rolling.minBits');
+	var minBitsSeter = this.setter('options.minBits');
 	this.setMinBits = function (val) {
 		minBitsSeter(rangeValToStep(config.cheerSteps, val));
 	};
@@ -69,9 +69,9 @@ function view(ctrl) {
 						max: config.cheerSteps.length - 1,
 						step: 1,
 						oninput: m.withAttr('value', ctrl.setMinBits),
-						value: config.cheerSteps.indexOf(ctrl.rolling.minBits)
+						value: config.cheerSteps.indexOf(ctrl.options.minBits)
 					}),
-					m('span.meta', ctrl.rolling.minBits.toLocaleString())
+					m('span.meta', ctrl.options.minBits.toLocaleString())
 				]),
 
 				// subscribed time
