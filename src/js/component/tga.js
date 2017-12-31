@@ -66,7 +66,6 @@ function Controller(container, config) {
 		types: ['all', 'active', 'keyword'],
 		activeTimeout: 20 * 1000 * 60,
 		keyword: null,
-		subscriberLuck: 1,
 		subscribedTime: 0,
 		forbiddenWords: [],
 		groups: {
@@ -274,7 +273,7 @@ function Controller(container, config) {
 
 		// Create rolling pool
 		var pool = [];
-		var subLuck = self.rolling.subscriberLuck;
+		var subLuck = self.options.subscriberLuck;
 		for (var i = 0, j, user; user = self.selectedUsers[i], i < self.selectedUsers.length; i++) {
 			if (!user.eligible) continue;
 			if (user.subscriber && subLuck > 1) {

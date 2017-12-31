@@ -96,15 +96,15 @@ function view(ctrl) {
 					m('input[type=range]#subscriber-luck', {
 						min: 1,
 						max: ctrl.config.maxSubscriberLuck,
-						oninput: m.withAttr('value', ctrl.setter('rolling.subscriberLuck').type('number')),
-						value: ctrl.rolling.subscriberLuck,
+						oninput: m.withAttr('value', ctrl.setter('options.subscriberLuck').type('number')),
+						value: ctrl.options.subscriberLuck,
 						disabled: ctrl.rolling.subscribedTime > 0
 					}),
-					m('span.meta', [ctrl.rolling.subscriberLuck, m('em', '×')]),
+					m('span.meta', [ctrl.options.subscriberLuck, m('em', '×')]),
 					m('p.description', [
 						'Subscribers ',
-						ctrl.rolling.subscriberLuck > 1
-							? ['are ', m('strong', ctrl.rolling.subscriberLuck), ' times more likely to win']
+						ctrl.options.subscriberLuck > 1
+							? ['are ', m('strong', ctrl.options.subscriberLuck), ' times more likely to win']
 							: ['get no special treatment'],
 						'. Details in ',
 						m('a[href="#"]', {onmousedown: ctrl.toSection('about')}, 'FAQ'),
