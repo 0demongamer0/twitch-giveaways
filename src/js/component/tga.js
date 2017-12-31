@@ -112,10 +112,11 @@ function Controller(container, config) {
 
 	function selectedFilter(user) {
 		var rol = self.rolling;
-		if (!rol.groups[user.group]) return false;
-		if (rol.subscriberLuck > self.config.maxSubscriberLuck && !user.subscriber) return false;
-		if (rol.minBits && rol.minBits > user.bits) return false;
-		if (rol.subscribedTime && (!user.subscriber || rol.subscribedTime > user.subscribedTime)) return false;
+		var opt = self.options;
+		if (!opt.groups[user.group]) return false;
+		if (opt.subscriberLuck > self.config.maxSubscriberLuck && !user.subscriber) return false;
+		if (opt.minBits && opt.minBits > user.bits) return false;
+		if (opt.subscribedTime && (!user.subscriber || opt.subscribedTime > user.subscribedTime)) return false;
 		if (self.searchFilter) {
 			if (self.searchFilter.value === 'truthy') {
 				if (!user[self.searchFilter.prop]) return false;
@@ -126,9 +127,9 @@ function Controller(container, config) {
 			}
 		}
 		if (self.searchQuery && !~user.name.indexOf(self.searchQuery) && !~user.displayName.indexOf(self.searchQuery)) return false;
-		if (rol.type === 'all') return true;
-		if (rol.type === 'active' && self.activeCutoffTime > user.lastMessage) return false;
-		if (rol.type === 'keyword' && rol.keyword && rol.keyword !== user.keyword) return false;
+		if (opt.type === 'all') return true;
+		if (opt.type === 'active' && self.activeCutoffTime > user.lastMessage) return false;
+		if (opt.type === 'keyword' && rol.keyword && rol.keyword !== user.keyword) return false;
 		return true;
 	}
 
