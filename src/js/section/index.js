@@ -29,7 +29,7 @@ function Controller() {
 		minBitsSeter(rangeValToStep(config.cheerSteps, val));
 	};
 
-	var subscribedTimeSetter = this.setter('rolling.subscribedTime');
+	var subscribedTimeSetter = this.setter('options.subscribedTime');
 	this.setSubscribedTime = function (val) {
 		subscribedTimeSetter(rangeValToStep(config.subscribedTimeSteps, val));
 	};
@@ -81,16 +81,16 @@ function view(ctrl) {
 						min: 0,
 						max: ctrl.config.subscribedTimeSteps.length - 1,
 						oninput: m.withAttr('value', ctrl.setSubscribedTime),
-						value: ctrl.config.subscribedTimeSteps.indexOf(ctrl.rolling.subscribedTime)
+						value: ctrl.config.subscribedTimeSteps.indexOf(ctrl.options.subscribedTime)
 					}),
-					m('span.meta', [ctrl.rolling.subscribedTime, ' ', icon('moon')])
+					m('span.meta', [ctrl.options.subscribedTime, ' ', icon('moon')])
 				]),
 
 				// subscriber luck
 				m('.option', {
 					key: 'subscriber-luck',
 					config: animate('slideinleft', 50 * i++),
-					className: ctrl.rolling.subscribedTime > 0 ? 'disabled' : ''
+					className: ctrl.options.subscribedTime > 0 ? 'disabled' : ''
 				}, [
 					m('label[for=subscriber-luck]', 'Subscriber luck'),
 					m('input[type=range]#subscriber-luck', {
@@ -98,7 +98,7 @@ function view(ctrl) {
 						max: ctrl.config.maxSubscriberLuck,
 						oninput: m.withAttr('value', ctrl.setter('options.subscriberLuck').type('number')),
 						value: ctrl.options.subscriberLuck,
-						disabled: ctrl.rolling.subscribedTime > 0
+						disabled: ctrl.options.subscribedTime > 0
 					}),
 					m('span.meta', [ctrl.options.subscriberLuck, m('em', '×')]),
 					m('p.description', [

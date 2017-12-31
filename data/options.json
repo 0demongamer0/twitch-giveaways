@@ -23,5 +23,6 @@
 	"caseSensitive": false,
 	"type": "all",
 	"minBits": 0,
-	"subscriberLuck": 1
+	"subscriberLuck": 1,
+	"subscribedTime": 0
 }
