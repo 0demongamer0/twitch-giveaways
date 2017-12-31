@@ -232,13 +232,13 @@ tabs.active = {
 				min: 1000 * 60,
 				max: ctrl.config.maxActiveTimeout,
 				step: 1000 * 60,
-				oninput: m.withAttr('value', ctrl.setter('rolling.activeTimeout').type('number')),
-				value: ctrl.rolling.activeTimeout
+				oninput: m.withAttr('value', ctrl.setter('options.activeTimeout').type('number')),
+				value: ctrl.options.activeTimeout
 			}),
-			m('span.meta', msToTime(ctrl.rolling.activeTimeout)),
+			m('span.meta', msToTime(ctrl.options.activeTimeout)),
 			m('p.description', [
 				'Only people who spoke in the last ',
-				msToTime(ctrl.rolling.activeTimeout),
+				msToTime(ctrl.options.activeTimeout),
 				'.'
 			])
 		]);

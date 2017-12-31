@@ -24,5 +24,6 @@
 	"type": "all",
 	"minBits": 0,
 	"subscriberLuck": 1,
-	"subscribedTime": 0
+	"subscribedTime": 0,
+	"activeTimeout": 1200000
 }

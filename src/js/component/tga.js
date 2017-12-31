@@ -64,7 +64,6 @@ function Controller(container, config) {
 	this.winners = new Winners(channel.name, {onsync: m.redraw});
 	this.rolling = {
 		types: ['all', 'active', 'keyword'],
-		activeTimeout: 20 * 1000 * 60,
 		keyword: null,
 		forbiddenWords: [],
 		groups: {
@@ -105,7 +104,7 @@ function Controller(container, config) {
 	// users filter event
 	this.activeCutoffTime;
 	function updateActiveCutoffTime() {
-		self.activeCutoffTime = new Date(Date.now() - self.rolling.activeTimeout);
+		self.activeCutoffTime = new Date(Date.now() - self.options.activeTimeout);
 	}
 	updateActiveCutoffTime();
 	setInterval(updateActiveCutoffTime, 1000);
@@ -197,7 +196,7 @@ function Controller(container, config) {
 
 	this.setter.on('rolling.groups', this.updateSelectedUsers);
 	this.setter.on('options.type', this.updateSelectedUsers);
-	this.setter.on('rolling.activeTimeout', function () {
+	this.setter.on('options.activeTimeout', function () {
 		updateActiveCutoffTime();
 		self.requestUpdateSelectedUsers();
 	});
