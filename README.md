@@ -1,8 +1,8 @@
 # Twitch Giveaways
 
-Comfortable giveaways system for [Twitch.tv](http://twitch.tv) channels.
+Comfortable giveaways system for [Twitch.tv](https://twitch.tv) channels.
 
-![Screenshot](http://i.imgur.com/tMulUND.png)
+![Screenshot](https://s3.amazonaws.com/crosseyejack.com/Files/screenshot.png)
 
 ## Why the fork?
 
@@ -19,8 +19,7 @@ And there are a few other issues I will fix and post about once I get around to 
 
 ## Installation
 
-TODO Replace link to the forked version once I launch it.
-- [Chrome Web Store](https://chrome.google.com/webstore/detail/twitch-giveaways/poohjpljfecljomfhhimjhddddlidhdd)
+- [Chrome Web Store](https://chrome.google.com/webstore/detail/twitch-giveaways/gnjjpnkophpiopnmfkbdkeejhmlcioao)
 
 ## Technologies used
 
@@ -34,7 +33,7 @@ TODO Replace link to the forked version once I launch it.
 
 ## Development environment
 
-You need to have [nodejs](http://nodejs.org/) installed.
+You need to have [nodejs](https://nodejs.org/) installed.
 
 Gulp:
 
@@ -50,8 +49,8 @@ npm install
 
 You will also need a ton of component dependencies that have seemed to stopped working since its deprecation for one reason or another.
 
-// TODO include link to the archive of dependencies
 Download the archive of dependencies and extract the "components" folder into the root of the project.
+https://s3.amazonaws.com/crosseyejack.com/Files/components.zip
 
 The required dependencies to build are as follows if you want to download them yourself.
 aheckmann/sliced/1.0.1
