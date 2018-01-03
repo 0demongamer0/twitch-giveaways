@@ -1,5 +1,12 @@
 [
 	{
+		"version": "Forked:2.13.3",
+		"date": "Nov 30, 2017",
+		"new": [
+			"FORKED... Removed Analytics. Added option to disable Sponsorship messages (disabled by default). Changed the giveaway button injection to cancel after its injected itself. Add a switch to toggle between using math.random and crypto.getRandomValues. Use regexp to replace {nick} instead of substr. This will allow you to use multiple \"{nick}\"'s in a announcement message. Made Several of the options save their state (such as \"Case Sensitive keyword\") to save having to make changes if you use the same settings repeatedly."
+		]
+	},
+	{
 		"version": "2.13.2",
 		"date": "Nov 30, 2017",
 		"new": [
