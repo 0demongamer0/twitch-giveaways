@@ -306,7 +306,7 @@ function Controller(container, config) {
 
 		// Announce winner in chat
 		if (self.options.announceWinner) {
-			chat.post(String(self.options.announceTemplate).replace(/{name}/i, winner.name));
+			chat.post(String(self.options.announceTemplate).replace(/{name}/g, /^[a-z0-9-_]+$/i.test(winner.displayName) ? winner.displayName : winner.name ));
 		}
 
 		// Set winner and open their profile
