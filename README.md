@@ -53,6 +53,47 @@ You will also need a ton of component dependencies that have seemed to stopped w
 // TODO include link to the archive of dependencies
 Download the archive of dependencies and extract the "components" folder into the root of the project.
 
+The required dependencies to build are as follows if you want to download them yourself.
+aheckmann/sliced/1.0.1
+code42day/dataset/v0.3.2
+component/bind/1.0.0
+component/classes/1.2.6
+component/clone/0.2.3
+component/closest/1.0.1
+component/delegate/0.2.4
+component/emitter/1.2.1
+component/escape-regexp/1.0.2
+component/event/0.1.4
+component/events/1.0.10
+component/indexof/0.0.3
+component/inherit/0.0.3
+component/matches-selector/0.1.6
+component/query/0.0.3
+component/raf/1.2.0
+component/throttle/1.0.0
+component/type/v1.2.1
+darsain/constructor-apply/0.1.0
+darsain/definer/1.0.0
+darsain/e/1.2.1
+darsain/event/1.0.0
+darsain/extend/1.0.0
+darsain/fuse/1.0.0
+darsain/isarraylike/1.0.0
+darsain/iswindow/1.0.0
+darsain/list/1.0.0
+darsain/parse-number/1.0.0
+darsain/position/1.0.0
+darsain/raft/1.0.0
+darsain/sortedlist/0.0.2
+darsain/tooltip/0.1.0
+darsain/tooltips/0.1.0
+eivindfjeldstad/dot/0.1.0
+ianstormtaylor/to-no-case/0.1.1
+ianstormtaylor/to-sentence-case/1.0.0
+jkroso/computed-style/0.1.0
+lhorie/mithril/v0.1.34
+yields/isarray/1.0.0
+
 You will also need to update the pinned dependencies by running.
 
 ```
