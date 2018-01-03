@@ -39,7 +39,7 @@ if (window.name === 'tga-embedded-chat') {
 			button.className = 'tw-button-icon';
 			button.style.padding = '0 4px';
 		} else {
-			button.style.padding = '4px';
+			button.style.paddingTop = '4px';
 		}
 
 		button.href = chrome.extension.getURL('main.html?channel=' + channel);
