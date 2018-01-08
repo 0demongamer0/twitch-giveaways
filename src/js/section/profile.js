@@ -133,6 +133,9 @@ function view(ctrl) {
 			m('.title', {config: animate('slideintop', i++ * 50 + 200)}, [
 				m('h1', user.displayName)
 			]),
+			m('.accountDetails', {config: animate('slideintop', i++ * 50 + 200)}, [
+				m('.creationDate', "Account Creation Date: ".concat(new Date(user.profile.created_at).toLocaleDateString()))
+			]),
 			m('.lead', [
 				m('.emblem', {config: animate('rotatein', 0, 600)}, [
 					m('a', {href: user.profileURL, target: '_blank'}, [
