@@ -1,5 +1,12 @@
 [
 	{
+		"version": "Forked:2.13.4",
+		"date": "Jan 30, 2018",
+		"new": [
+			"Added 'Show Account Creation Date' user the winner and Reannounce Winner Button"
+		]
+	},
+	{
 		"version": "Forked:2.13.3",
 		"date": "Nov 30, 2017",
 		"new": [
