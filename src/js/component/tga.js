@@ -251,6 +251,10 @@ function Controller(container, config) {
 		}
 	};
 
+	this.reannounce = function() {
+		chat.post(String(self.options.announceTemplate).replace(/{name}/g, /^[a-z0-9-_]+$/i.test(self.winner.displayName) ? self.winner.displayName : self.winner.name ));
+	};
+
 	// Rolling function
 	this.roll = function () {
 		// Blur active element to work around this chrome rendering bug:

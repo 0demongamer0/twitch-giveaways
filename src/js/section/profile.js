@@ -165,6 +165,13 @@ function view(ctrl) {
 				])
 			])
 		]),
+		(ctrl.options.announceWinner) ?
+		m('fieldset.reannounceTemplate', {config: animate('slideinleft', 300)}, [
+			m('.btn.btn-success.reannounce', {
+				config: animate('slideinleft', 50 * i++),
+				onmousedown: withKey(1, ctrl.reannounce)
+			}, 'Reannounce Winner')
+		]) : null,
 		(ctrl.options.displayAdverts) ?
 		m('fieldset.sponsored-by', [
 			m('legend', 'Twitch Giveaways is sponsored by'),
